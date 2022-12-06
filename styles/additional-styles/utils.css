@@ -1,0 +1,63 @@
+.internal-link-container > .note-preview {
+  display: none;
+  position: absolute;
+  width: 350px;
+  z-index: 99999;
+  left:0;
+}
+
+.internal-link-container > .internal-link:hover + .note-preview {
+  display: block;
+}
+.internal-link-container {
+  position: relative;
+}
+.internal-link:hover {
+  text-decoration: underline;
+}
+.internal-link {
+  color: #0969da;
+  background-color: rgb(243 250 251) !important;
+}
+
+/* Typography */
+.h1 {
+    @apply text-4xl font-extrabold leading-tight tracking-tighter;
+}
+
+.h2 {
+    @apply text-3xl font-extrabold leading-tight tracking-tighter;
+}
+
+.h3 {
+    @apply text-3xl font-bold leading-tight;
+}
+
+.h4 {
+    @apply text-2xl font-bold leading-snug tracking-tight;
+}
+
+@screen md {
+    .h1 {
+        @apply text-5xl;
+    }
+
+    .h2 {
+        @apply text-4xl;
+    }
+}
+
+
+/* Buttons */
+.btn,
+.btn-sm {
+    @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
+}
+
+.btn {
+    @apply px-8 py-3 shadow-lg;
+}
+
+.btn-sm {
+    @apply px-4 py-2 shadow;
+}

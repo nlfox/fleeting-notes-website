@@ -78,7 +78,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
+                  <Link href="/posts" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
                 </li>              
               </ul>
 
@@ -144,7 +144,7 @@ const Header = () => {
                   <Link href="/tutorials" className="flex text-gray-600 hover:text-gray-900 py-2">Tutorials</Link>
                 </li>  
                 <li>
-                  <Link href="/blog" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
+                  <Link href="/posts" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
                 </li>                                  
                 <li>
                   <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center">Sign in</Link>

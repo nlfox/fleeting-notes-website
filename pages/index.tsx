@@ -1,59 +1,26 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
-import Post from '../interfaces/post'
+import Head from "next/head";
+import Cta from "../components/landing/cta";
+import FeaturesBlocks from "../components/landing/features-blocks";
+import FeaturesHome from "../components/landing/features-home";
+import Footer from "../components/landing/footer";
+import Header from "../components/landing/header";
+import HeroHome from "../components/landing/hero-home";
+import TestimonialsHome from "../components/landing/testimoninals-home";
 
-type Props = {
-  allPosts: Post[]
-}
-
-export default function Index({ allPosts }: Props) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Home() {
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
-        <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
+    <div className="flex flex-col min-h-screen overflow-hidden">
+      <Head>
+        <title>Fleeting Notes</title>
+      </Head>
+      {/* <Header /> */}
+      <main className="grow">
+        <HeroHome />
+        <FeaturesHome />
+        <FeaturesBlocks />
+        <TestimonialsHome />
+        <Cta />
+      </main>
+    </div>
   )
-}
-
-export const getStaticProps = async () => {
-  let allPosts = await getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
-
-  // filter posts shown here
-  allPosts = allPosts.filter((post) => post.slug.startsWith('posts/'))
-  
-  return {
-    props: { allPosts },
-  }
 }

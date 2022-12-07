@@ -13,7 +13,7 @@ const PostMeta = ({
   if (!(author || date)) return null;
   return (
     <>
-      <div className="flex items-center mb-6">
+      <div className="flex items-center">
         {author && (
           <div className="flex shrink-0 mr-3">
             <a className="relative" href="#0">
@@ -33,7 +33,6 @@ const PostMeta = ({
           {date && (<span className="text-gray-600"><DateFormatter dateString={date} /></span>)}
         </div>
       </div>
-      <hr className="w-16 h-px pt-px bg-gray-200 border-0 mb-6" />
     </>
   )
 }

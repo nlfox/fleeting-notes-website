@@ -5,6 +5,8 @@ import Post from '../../interfaces/post'
 import PostList from '../../components/blog/post-list'
 import Pagination from '../../components/blog/pagination'
 import PostType from '../../interfaces/post'
+import Header from '../../components/landing/header'
+import Footer from '../../components/landing/footer'
 
 type Props = {
   posts: Post[]
@@ -15,6 +17,7 @@ type Props = {
 export default function Index({ posts, pid, maxPid }: Props) {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Header />
       <Head>
         <title>Next.js Blog Example with {CMS_NAME}</title>
       </Head>
@@ -22,6 +25,7 @@ export default function Index({ posts, pid, maxPid }: Props) {
         <PostList posts={posts || []}/>
         <Pagination currPage={pid} maxPage={maxPid}/>
       </main>
+      <Footer />
     </div>
   )
 }

@@ -7,6 +7,8 @@ import { markdownToHtml } from '../lib/markdownToHtml'
 import type PostType from '../interfaces/post'
 import path from 'path'
 import PostSingle from '../components/blog/post-single'
+import Footer from '../components/landing/footer'
+import Header from '../components/landing/header'
 
 type Items = {
   title: string,
@@ -30,6 +32,7 @@ export default function Post({ post, backlinks }: Props) {
         <PostTitle>Loading…</PostTitle>
       ) : (
         <>
+          <Header />
           <Head>
             <title>
               {post.title} | Fleeting Notes
@@ -43,6 +46,7 @@ export default function Post({ post, backlinks }: Props) {
             author={post.author}
             backlinks={backlinks}
           />
+          <Footer />
         </>
       )}
     </>

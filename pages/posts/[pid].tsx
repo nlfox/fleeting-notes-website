@@ -19,7 +19,7 @@ export default function Index({ posts, pid, maxPid }: Props) {
         <title>Next.js Blog Example with {CMS_NAME}</title>
       </Head>
       <main className="grow">
-        <PostList posts={posts}/>
+        <PostList posts={posts || []}/>
         <Pagination currPage={pid} maxPage={maxPid}/>
       </main>
     </div>
@@ -33,7 +33,7 @@ type Params = {
   }
 }
 
-const pageSize = 10;
+const pageSize = 6;
 const filterPosts = (posts) => posts.filter((post) => post.slug.startsWith('posts/'))
 export const getStaticProps = async ({ params }: Params) => {
   let posts = await getAllPosts([

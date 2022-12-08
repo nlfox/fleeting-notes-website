@@ -1,6 +1,5 @@
 import Link from "next/link"
 import type Author from '../../interfaces/author'
-import DateFormatter from "../date-formatter"
 import PostMeta from "./post-meta"
 
 type Props = {

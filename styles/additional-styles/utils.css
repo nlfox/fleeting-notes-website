@@ -1,21 +1,18 @@
 .internal-link-container > .note-preview {
-  display: none;
-  position: absolute;
-  width: 350px;
-  z-index: 99999;
-  left:0;
+  @apply hidden absolute w-[350px] left-0 z-50
 }
 
 .internal-link-container > .internal-link:hover + .note-preview {
-  display: block;
+  @apply block
 }
 .internal-link-container {
-  position: relative;
+  @apply relative
 }
 .internal-link:hover {
-  text-decoration: underline;
+  @apply underline
 }
 .internal-link {
+  @apply rounded;
   color: #0969da;
   background-color: rgb(243 250 251) !important;
 }

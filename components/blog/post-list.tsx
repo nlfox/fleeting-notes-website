@@ -16,8 +16,8 @@ function PostList({ posts }: Props) {
 
           {/* Page header */}
           <div className="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-            <h1 className="h1 mb-4">Type the way you talk</h1>
-            <p className="text-xl text-gray-600">Stay up to date on the latest from Simple and best news from the Dev world.</p>
+            <h1 className="h1 mb-4">Explore my notes</h1>
+            <p className="text-xl text-gray-600">Posts are connected through bi-directional links. Click any post and check it out!</p>
           </div>
 
           {/* Main content */}

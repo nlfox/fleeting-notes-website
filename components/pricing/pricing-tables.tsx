@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function PricingTables() {
   const [plans] = useState([
     {
-      name: "Free",
+      name: "Starter",
       blurb: "For people that only capture on one device",
       price: ['$', '0', '/month'],
       featured: false,
@@ -31,7 +31,7 @@ function PricingTables() {
       ctaText: "Start free trial"
     },
     {
-      name: "Premium",
+      name: "Believer",
       blurb: "For people who believe in the future of Fleeting Notes",
       price: ['$', '6', '/month'],
       featured: false,

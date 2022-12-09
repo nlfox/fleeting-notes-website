@@ -17,7 +17,7 @@ function Cta() {
 
               {/* CTA button */}
               <div>
-                <a className="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white w-36" href="#0">Join</a>
+                <a className="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white w-36" href="#0">Join Now</a>
               </div>
 
             </div>

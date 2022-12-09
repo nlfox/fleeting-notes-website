@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
+import PreviewLink from "../preview-link";
 
 const HeroHome = () => {
   const [iframeHidden, setIframeHidden] = useState(true);  
 
     // hides iframe to prevent focus jank (jumping to iframe on click) 
     useEffect(() => {
-      console.log('init scroll');
+      let lastScrollPosition = window.scrollY;
       const scrollHandler = () => {
-        setIframeHidden(true);
+        if (Math.abs(lastScrollPosition - window.scrollY) > 500) {
+          lastScrollPosition = window.scrollY;
+          setIframeHidden(true);
+        }
       };
       window.addEventListener('scroll', scrollHandler);
       return () => window.removeEventListener('scroll', scrollHandler);
@@ -39,38 +43,29 @@ const HeroHome = () => {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
           {/* Section header */}
-          <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-7xl md:text-8xl font-extrabold leading-none mb-4" data-aos="zoom-y-out">Make your website <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">wonderful</span></h1>
+          <div className="text-center">
+            <h1 className="text-7xl md:text-8xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">Keep / Apple Notes with <PreviewLink href="/notes/wikilinks">bi-directional links</PreviewLink></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
-              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
-                <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Start free trial</a>
-                </div>
-                <div>
-                  <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">Learn more</a>
-                </div>
-              </div>
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Take linked notes within your browser or on your phone, then <PreviewLink href="/posts/sync-fleeting-notes-with-obsidian">sync the notes with Obsidian</PreviewLink></p>
             </div>
           </div>
 
           {/* Hero image */}
           <div>
             <div className="relative flex justify-center mb-8 max-w-3xl mx-auto" data-aos="zoom-y-out" data-aos-delay="450">
-              <div className="flex flex-col justify-center w-full">
-                <img className={`w-full h-[500px] mx-auto ${iframeHidden ? 'block' : 'hidden'}`} src={"https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80"} alt="Hero" />
-                <iframe className={`w-full h-[500px] shadow-lg border rounded ${iframeHidden ? 'hidden' : 'block'}`} src="https://my.fleetingnotes.app/?note=d8e2d800-3470-11ed-8f75-019219fce7fb"></iframe>
+              <div className="flex flex-col justify-center w-full shadow-md border rounded">
+                <img className={`w-full mx-auto ${iframeHidden ? 'block' : 'hidden'}`} src="assets/demo.png" alt="Hero" />
+                <iframe className={`w-full h-[500px] ${iframeHidden ? 'hidden' : 'block'}`} src="https://my.fleetingnotes.app/?note=d8e2d800-3470-11ed-8f75-019219fce7fb"></iframe>
               </div>
-              <button className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg" onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIframeHidden(!iframeHidden); }} aria-controls="modal">
+              <button className={`absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg ${iframeHidden ? 'block' : 'hidden'}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIframeHidden(!iframeHidden); }} aria-controls="modal">
                 <svg className="w-6 h-6 fill-current text-gray-400 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" />
                   <path d="M10 17l6-5-6-5z" />
                 </svg>
-                <span className="ml-3">Watch the full video (2 min)</span>
+                <span className="ml-3">Click for interactive demo</span>
               </button>
             </div>
           </div>
-        
         
         </div>
       </div>

@@ -8,8 +8,8 @@ function TestimonialsHome() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Simple can help you scale internationally</h1>
-            <p className="text-xl text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+            <h1 className="h2 mb-4">What our users say</h1>
+            <p className="text-xl text-gray-600">Don't take my word for it. See what our users have to say about Fleeting Notes</p>
           </div>
           <IframeResizer
             log

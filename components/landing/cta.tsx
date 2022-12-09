@@ -11,13 +11,13 @@ function Cta() {
 
               {/* CTA content */}
               <div className="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left">
-                <h3 className="h3 text-white mb-2">Ready to get started?</h3>
-                <p className="text-white text-lg opacity-75">We have a generous free tier available to get you started right away.</p>
+                <h3 className="h3 text-white mb-2">Join the Discord community!</h3>
+                <p className="text-white text-lg opacity-75">Make feature requests, report bugs, or chat with me! Otherwise you can reach me at <a className="underline" href="mailto:fleetingnotesapp@gmail.com">fleetingnotesapp@gmail.com</a></p>
               </div>
 
               {/* CTA button */}
               <div>
-                <a className="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white" href="#0">Get started for free</a>
+                <a className="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white w-36" href="#0">Join</a>
               </div>
 
             </div>

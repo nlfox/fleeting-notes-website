@@ -1,4 +1,5 @@
 import  { useState, useRef, useEffect } from 'react';
+import PreviewLink from '../preview-link';
 import Transition from './utils/transitions';
 
 const TopImage = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
@@ -37,13 +38,13 @@ function FeaturesHome() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">How Simple works</h1>
-            <p className="text-xl text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+            <h1 className="h2 mb-4">Stop manually transfering notes from one app to another</h1>
+            <p className="text-xl text-gray-600">I know typical <PreviewLink href="posts/put-quick-notes-into-obsidian-from-anywhere">PKM tools aren't built for quick capture</PreviewLink>. With Fleeting Notes, you can capture ideas that sync directly with your knowledge base</p>
           </div>
 
           {/* Top image */}
           <div className="pb-12 md:pb-16">
-            <img src={TopImage} width="1104" height="325" alt="Features top" />
+            <img src="assets/top-image.png" width="1104" height="325" alt="Features top" />
           </div>
 
           {/* Section content */}
@@ -52,8 +53,8 @@ function FeaturesHome() {
             {/* Content */}
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">Powerful suite of tools</h3>
-                <p className="text-xl text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+                <h3 className="h3 mb-3">Everything you need for quick capture</h3>
+                <p className="text-xl text-gray-600">Take your workflow to the next level and make quick capture actually quick</p>
               </div>
               {/* Tabs buttons */}
               <div className="mb-8 md:mb-0">
@@ -62,8 +63,8 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Building the Simple ecosystem</div>
-                    <div className="text-gray-600">Take collaboration to the next level with security and administrative features built for teams.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Capture Ideas Anytime, Anywhere</div>
+                    <div className="text-gray-600">Create and sync fleeting notes on the web, in your phone, or even within a browser extension</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -76,8 +77,8 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Building the Simple ecosystem</div>
-                    <div className="text-gray-600">Take collaboration to the next level with security and administrative features built for teams.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Keep track of any source</div>
+                    <div className="text-gray-600">Highlight text, share links, and paste images/files directly into Fleeting Notes</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -90,8 +91,8 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Building the Simple ecosystem</div>
-                    <div className="text-gray-600">Take collaboration to the next level with security and administrative features built for teams.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Built for Obsidian MD</div>
+                    <div className="text-gray-600">Use the "Fleeting Notes Sync" Obsidian plugin to sync and process your notes</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">

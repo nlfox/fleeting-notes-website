@@ -1,5 +1,5 @@
 import Author from "../../interfaces/author"
-import DateFormatter from "../date-formatter"
+import DateFormatter from "../misc/date-formatter"
 
 type Props = {
   author?: Author,

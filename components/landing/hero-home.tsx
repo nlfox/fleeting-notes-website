@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PreviewLink from "../preview-link";
+import PreviewLink from "../misc/preview-link";
 
 const HeroHome = () => {
   const [iframeHidden, setIframeHidden] = useState(true);  

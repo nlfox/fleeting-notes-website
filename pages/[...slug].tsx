@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getPostBySlug, getAllPosts, getLinksMapping } from '../lib/api'
-import PostTitle from '../components/post-title'
 import Head from 'next/head'
 import { markdownToHtml } from '../lib/markdownToHtml'
 import type PostType from '../interfaces/post'
@@ -29,7 +28,7 @@ export default function Post({ post, backlinks }: Props) {
   return (
     <>
       {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
+        <h1>Loading…</h1>
       ) : (
         <>
           <Header />

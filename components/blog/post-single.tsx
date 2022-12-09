@@ -1,12 +1,8 @@
-import Link from 'next/link';
 import React from 'react';
 import Author from '../../interfaces/author';
-import Backlinks from '../backlinks';
-import PostBody from '../post-body';
+import Backlinks from '../misc/backlinks';
+import PostBody from './post-body';
 import PostMeta from './post-meta';
-
-const NewsAuthor = "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/279362725_10221566871590320_5754118986539619522_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xJF8nWFM8VQAX9q0vlR&tn=xlIn5hvwDet_PUtL&_nc_ht=scontent-ord5-1.xx&oh=00_AfBbYtPecq4C0wVWPRIOKhVVVNpOJvhItVd5LF2bThAGyQ&oe=6394EB80"
-const NewsImage = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80"
 
 type Props = {
   title: string,

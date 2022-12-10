@@ -10,7 +10,7 @@ function PricingTables() {
       features: [
         <span>Unlimited Notes</span>,
         <span>10 MB Attachment Limit</span>,
-        <span>Blazing fast full-text search</span>,
+        <span>All offline features</span>,
         <span>Access to apps on all platforms</span>,
         <span>Plugin for Obsidian MD sync</span>,
       ],

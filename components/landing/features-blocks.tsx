@@ -1,3 +1,5 @@
+import PreviewLink from "../misc/preview-link";
+
 function FeaturesBlocks() {
   return (
     <section className="relative">
@@ -28,7 +30,7 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">End-to-end Encryption</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="posts/end-to-end-encryption-in-fleeting-notes">End-to-end Encryption</PreviewLink></h4>
               <p className="text-gray-600 text-center">Ensure that your notes are accessible to you and ONLY you</p>
             </div>
 
@@ -56,7 +58,7 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Easy Export</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="notes/how to export notes in fn">Easy Export</PreviewLink></h4>
               <p className="text-gray-600 text-center">Export all your notes in Markdown or JSON format</p>
             </div>
 
@@ -84,7 +86,7 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Android/iOS Home Widgets</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="posts/home-widgets-for-fleeting-notes">Android/iOS Home Widgets</PreviewLink></h4>
               <p className="text-gray-600 text-center">Access your notes directly from your home screen</p>
             </div>
 
@@ -98,7 +100,7 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Local file sync</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="posts/alternative-sync-local-only-for-fn">Local file sync</PreviewLink></h4>
               <p className="text-gray-600 text-center">Sync notes with your local filesystem in markdown format</p>
             </div>
 

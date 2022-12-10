@@ -45,8 +45,12 @@ function PostSingle({
                 <div>
 
                   {/* Article meta */}
-                  <PostMeta author={author} date={date}/>
-                  <hr className="w-16 h-px pt-px bg-gray-200 border-0 my-6" />
+                  {(author || date) && (
+                    <>
+                      <PostMeta author={author} date={date}/>
+                      <hr className="w-16 h-px pt-px bg-gray-200 border-0 my-6" />
+                    </>
+                  )}
 
                   {/* Article body */}
                   <PostBody content={content}/>

@@ -89,7 +89,7 @@ function PricingTables() {
                     ))}
                   </ul>
                   <div className="border-t border-gray-200 pt-5 mt-6">
-                    <a className="btn-sm text-white bg-blue-600 hover:bg-blue-700 w-full" href="#0">{plan.ctaText}</a>
+                    <a className="btn-sm text-white bg-blue-600 hover:bg-blue-700 w-full" href={plan.url}>{plan.ctaText}</a>
                   </div>
                 </div>
               )))}

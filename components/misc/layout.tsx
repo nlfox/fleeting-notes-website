@@ -1,5 +1,5 @@
-import Footer from '../landing/footer'
-import Header from '../landing/header'
+import Footer from './footer'
+import Header from './header'
 import Meta from './meta'
 
 type Props = {

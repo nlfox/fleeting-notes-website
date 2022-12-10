@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import Transition from './utils/transitions';
+import Transition from '../utils/transitions';
 import Link from 'next/link'
 
 const Header = () => {

@@ -1,13 +1,6 @@
-import  { useState, useRef, useEffect } from 'react';
+import  { useState, useRef } from 'react';
 import PreviewLink from '../misc/preview-link';
-import Transition from './utils/transitions';
-
-const TopImage = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
-const FeaturesBg01 = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
-const FeaturesElement01 = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
-const FeaturesElement02 = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
-const FeaturesElement03 = "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
-
+import Transition from '../utils/transitions';
 
 function FeaturesHome() {
 

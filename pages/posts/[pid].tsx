@@ -16,7 +16,7 @@ export default function Index({ posts, pid, maxPid }: Props) {
   return (
     <Layout>
       <Head>
-        <title>Blog | Fleeting Notes</title>
+        <title>Blog | {process.env.NEXT_PUBLIC_TITLE}</title>
       </Head>
       <PostList posts={posts || []}/>
       <Pagination currPage={pid} maxPage={maxPid}/>

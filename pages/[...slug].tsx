@@ -6,8 +6,6 @@ import { markdownToHtml } from '../lib/markdownToHtml'
 import type PostType from '../interfaces/post'
 import path from 'path'
 import PostSingle from '../components/blog/post-single'
-import Footer from '../components/landing/footer'
-import Header from '../components/landing/header'
 import Layout from '../components/misc/layout'
 
 type Items = {
@@ -23,6 +21,7 @@ type Props = {
 
 export default function Post({ post, backlinks }: Props) {
   const router = useRouter()
+  const description = post.excerpt.slice(0, 155)
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
@@ -34,9 +33,15 @@ export default function Post({ post, backlinks }: Props) {
         <Layout>
           <Head>
             <title>
-              {post.title} | Fleeting Notes
+              {post.title}
             </title>
-            {post.ogImage?.url && (<meta property="og:image" content={post.ogImage.url} />)}
+            <meta name="description" content={description} />
+            <meta property="og:title" content={post.title}/>
+            <meta name="og:description" content={description} />
+            {post.ogImage?.url ? <meta property="og:image" content={post.ogImage.url} /> : <meta property="og:image" content="favicon/512.png" />}
+            <meta property="twitter:title" content={post.title} />
+            <meta name="twitter:description" content={description} />
+            {post.ogImage?.url ? <meta property="twitter:image" content={post.ogImage.url} /> : <meta property="twitter:image" content="favicon/512.png" />}
           </Head>
           <PostSingle
             title={post.title}
@@ -62,6 +67,7 @@ export async function getStaticProps({ params }: Params) {
   const slug = path.join(...params.slug)
   const post = await getPostBySlug(slug, [
     'title',
+    'excerpt',
     'date',
     'slug',
     'author',

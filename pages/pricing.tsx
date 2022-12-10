@@ -9,7 +9,7 @@ export default function Pricing() {
   return (
     <Layout>
       <Head>
-        <title>Pricing | Fleeting Notes</title>
+        <title>Pricing | {process.env.NEXT_PUBLIC_TITLE}</title>
       </Head>
       <PricingTables />
       <FeaturesTable />

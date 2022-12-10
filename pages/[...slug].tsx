@@ -32,9 +32,7 @@ export default function Post({ post, backlinks }: Props) {
       ) : (
         <Layout>
           <Head>
-            <title>
-              {post.title}
-            </title>
+            <title>{post.title}</title>
             <meta name="description" content={description} />
             <meta property="og:title" content={post.title}/>
             <meta name="og:description" content={description} />

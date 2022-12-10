@@ -13,10 +13,11 @@ type Props = {
 }
 
 export default function Index({ posts, pid, maxPid }: Props) {
+  const titleText = `Blog | ${process.env.NEXT_PUBLIC_TITLE}`
   return (
     <Layout>
       <Head>
-        <title>Blog | {process.env.NEXT_PUBLIC_TITLE}</title>
+        <title>{titleText}</title>
       </Head>
       <PostList posts={posts || []}/>
       <Pagination currPage={pid} maxPage={maxPid}/>

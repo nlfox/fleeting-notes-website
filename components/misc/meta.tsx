@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Script from "next/script"
 
 const Meta = () => {
+  const titleText = `${process.env.NEXT_PUBLIC_TITLE} | ${process.env.NEXT_PUBLIC_TAGLINE}`
   return (
     <Head>
       {/* Google tag (gtag.js) */}
@@ -22,7 +23,7 @@ const Meta = () => {
       {/* END of Google tag (gtag.js) */}
 
       {/* Meta tags */}
-      <title>{process.env.NEXT_PUBLIC_TITLE} | {process.env.NEXT_PUBLIC_TAGLINE}</title>
+      <title>{titleText}</title>
       <meta name="author" content="Matthew Wong" />
       <meta name="description" content={process.env.NEXT_PUBLIC_DESCRIPTION} />
       <meta property="og:title" content={process.env.NEXT_PUBLIC_TITLE}/>

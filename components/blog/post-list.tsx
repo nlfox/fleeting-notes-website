@@ -28,6 +28,7 @@ function PostList({ posts }: Props) {
             <div className="md:grow -mt-4">
               {posts.map((post) => (
                 <PostPreview
+                  key={post.slug}
                   title={post.title}
                   date={post.date}
                   excerpt={post.excerpt}

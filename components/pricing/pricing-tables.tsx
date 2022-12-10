@@ -61,7 +61,7 @@ function PricingTables() {
             <div className="max-w-sm md:max-w-2xl xl:max-w-none mx-auto grid gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-6 items-start">
 
               {plans.map((plan => (
-                <div className={`relative flex flex-col h-full py-5 px-6 rounded shadow-xl ${plan.featured ? "bg-blue-100 border-2 border-blue-500" : "bg-white"}`} data-aos="zoom-y-out" data-aos-delay="450">
+                <div key={plan.name} className={`relative flex flex-col h-full py-5 px-6 rounded shadow-xl ${plan.featured ? "bg-blue-100 border-2 border-blue-500" : "bg-white"}`} data-aos="zoom-y-out" data-aos-delay="450">
                   {(plan.featured) && (
                     <div className="absolute top-0 right-0 mr-5 p-3 -mt-5 bg-yellow-500 rounded-full">
                       <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -79,8 +79,8 @@ function PricingTables() {
                     <div className="text-lg text-gray-800">{plan.blurb}</div>
                   </div>
                   <ul className="text-gray-600 -mb-2 grow">
-                    {plan.features.map((feature) => (
-                      <li className="flex items-center mb-2">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-center mb-2">
                         <svg className="w-3 h-3 fill-current text-green-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                           <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                         </svg>

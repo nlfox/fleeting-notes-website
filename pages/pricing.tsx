@@ -6,10 +6,11 @@ import FeaturesTable from "../components/pricing/features-table"
 import PricingTables from "../components/pricing/pricing-tables"
 
 export default function Pricing() {
+  const titleText = `Pricing | ${process.env.NEXT_PUBLIC_TITLE}`
   return (
     <Layout>
       <Head>
-        <title>Pricing | {process.env.NEXT_PUBLIC_TITLE}</title>
+        <title>{titleText}</title>
       </Head>
       <PricingTables />
       <FeaturesTable />

@@ -28,7 +28,7 @@ function FeaturesHome() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">Stop manually transfering notes from one app to another</h1>
-            <p className="text-xl text-gray-600">I know typical <PreviewLink href="posts/put-quick-notes-into-obsidian-from-anywhere">PKM tools aren't built for quick capture</PreviewLink>. With Fleeting Notes, you can capture ideas that sync directly with your knowledge base</p>
+            <p className="text-xl text-gray-600">I know typical <PreviewLink href="/posts/put-quick-notes-into-obsidian-from-anywhere">PKM tools aren't built for quick capture</PreviewLink>. With Fleeting Notes, you can capture ideas that sync directly with your knowledge base</p>
           </div>
 
           {/* Top image */}

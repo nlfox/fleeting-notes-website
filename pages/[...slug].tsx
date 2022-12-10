@@ -8,6 +8,7 @@ import path from 'path'
 import PostSingle from '../components/blog/post-single'
 import Footer from '../components/landing/footer'
 import Header from '../components/landing/header'
+import Layout from '../components/misc/layout'
 
 type Items = {
   title: string,
@@ -30,8 +31,7 @@ export default function Post({ post, backlinks }: Props) {
       {router.isFallback ? (
         <h1>Loading…</h1>
       ) : (
-        <>
-          <Header />
+        <Layout>
           <Head>
             <title>
               {post.title} | Fleeting Notes
@@ -45,8 +45,7 @@ export default function Post({ post, backlinks }: Props) {
             author={post.author}
             backlinks={backlinks}
           />
-          <Footer />
-        </>
+        </Layout>
       )}
     </>
   )

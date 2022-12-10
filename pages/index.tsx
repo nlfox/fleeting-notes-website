@@ -2,26 +2,21 @@ import Head from "next/head";
 import Cta from "../components/landing/cta";
 import FeaturesBlocks from "../components/landing/features-blocks";
 import FeaturesHome from "../components/landing/features-home";
-import Footer from "../components/landing/footer";
-import Header from "../components/landing/header";
 import HeroHome from "../components/landing/hero-home";
 import TestimonialsHome from "../components/landing/testimoninals-home";
+import Layout from "../components/misc/layout";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <Layout>
       <Head>
         <title>Fleeting Notes</title>
       </Head>
-      <Header />
-      <main className="grow">
-        <HeroHome />
-        <FeaturesHome />
-        <FeaturesBlocks />
-        <TestimonialsHome />
-        <Cta />
-      </main>
-      <Footer />
-    </div>
+      <HeroHome />
+      <FeaturesHome />
+      <FeaturesBlocks />
+      <TestimonialsHome />
+      <Cta />
+    </Layout>
   )
 }

@@ -1,17 +1,20 @@
+import Footer from '../landing/footer'
+import Header from '../landing/header'
 import Meta from './meta'
 
 type Props = {
-  preview?: boolean
   children: React.ReactNode
 }
 
-const Layout = ({ preview, children }: Props) => {
+const Layout = ({ children }: Props) => {
   return (
-    <div style={{overflow: 'hidden'}}>
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <Meta />
-      <div className="min-h-screen">
-        <main>{children}</main>
-      </div>
+      <Header />
+      <main className="grow">
+        {children}
+      </main>
+      <Footer />
     </div>
   )
 }

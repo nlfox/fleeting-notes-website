@@ -1,12 +1,10 @@
 import { getAllPosts } from '../../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
 import Post from '../../interfaces/post'
 import PostList from '../../components/blog/post-list'
 import Pagination from '../../components/blog/pagination'
 import PostType from '../../interfaces/post'
-import Header from '../../components/landing/header'
-import Footer from '../../components/landing/footer'
+import Layout from '../../components/misc/layout'
 
 type Props = {
   posts: Post[]
@@ -16,17 +14,13 @@ type Props = {
 
 export default function Index({ posts, pid, maxPid }: Props) {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      <Header />
+    <Layout>
       <Head>
-        <title>Next.js Blog Example with {CMS_NAME}</title>
+        <title>Blog | Fleeting Notes</title>
       </Head>
-      <main className="grow">
-        <PostList posts={posts || []}/>
-        <Pagination currPage={pid} maxPage={maxPid}/>
-      </main>
-      <Footer />
-    </div>
+      <PostList posts={posts || []}/>
+      <Pagination currPage={pid} maxPage={maxPid}/>
+    </Layout>
   )
 }
 

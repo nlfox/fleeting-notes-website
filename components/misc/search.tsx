@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import PostPreview from "../blog/post-preview";
+import { useRouter } from 'next/router'
+
 
 function useOutsideAlerter(ref, callback) {
   useEffect(() => {
@@ -21,6 +23,7 @@ function useOutsideAlerter(ref, callback) {
 }
 
 function Search({ visible, setVisible }) {
+  const router = useRouter();
   const inputRef = useRef(null);
   const containerRef = useRef(null);
   const [searchResults, setSearchResults] = useState([])
@@ -34,6 +37,10 @@ function Search({ visible, setVisible }) {
   useOutsideAlerter(containerRef, () => {
     setVisible(false);
   });
+
+  useEffect(() => {
+    setVisible(false)
+  }, [router.asPath])
 
 
   async function handleChangeInput(e) {

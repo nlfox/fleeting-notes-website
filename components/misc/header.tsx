@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import Transition from '../utils/transitions';
 import Link from 'next/link'
+import Search from './search';
 
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [top, setTop] = useState(true);
+  const [searching, setSearching] = useState(false);
 
   const trigger = useRef(null);
   const mobileNav = useRef(null);
@@ -68,6 +70,13 @@ const Header = () => {
               {/* Desktop sign in links */}
               <ul className="flex grow justify-end flex-wrap items-center">
                 <li>
+                  <button className="w-4 h-4 my-auto mx-2 border-black" aria-label="Search" onClick={() => setSearching(!searching)}>
+                    <svg className="w-4 h-4 fill-current text-gray-400" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zM15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
+                    </svg>
+                  </button>
+                </li>
+                <li>
                   <Link href="/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
                     <span>Download Now</span>
                     <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -79,60 +88,63 @@ const Header = () => {
 
             </nav>
 
-                      {/* Mobile menu */}
+          {/* Mobile menu */}
           <div className="flex md:hidden">
 
-          {/* Hamburger button */}
-          <button
-            ref={trigger}
-            className={`hamburger ${mobileNavOpen && 'active'}`}
-            aria-controls="mobile-nav"
-            aria-expanded={mobileNavOpen}
-            onClick={() => setMobileNavOpen(!mobileNavOpen)}
-          >
-            <span className="sr-only">Menu</span>
-            <svg className="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <rect y="4" width="24" height="2" />
-              <rect y="11" width="24" height="2" />
-              <rect y="18" width="24" height="2" />
-            </svg>
-          </button>
+            {/* Hamburger button */}
+            <button
+              ref={trigger}
+              className={`hamburger ${mobileNavOpen && 'active'}`}
+              aria-controls="mobile-nav"
+              aria-expanded={mobileNavOpen}
+              onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            >
+              <span className="sr-only">Menu</span>
+              <svg className="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect y="4" width="24" height="2" />
+                <rect y="11" width="24" height="2" />
+                <rect y="18" width="24" height="2" />
+              </svg>
+            </button>
 
-          {/*Mobile navigation */}
-          <div ref={mobileNav}>
-            <Transition
-                show={mobileNavOpen}
-                tag="nav"
-                id="mobile-nav"
-                className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white"
-                enter="transition ease-out duration-200 transform"
-                enterStart="opacity-0 -translate-y-2"
-                enterEnd="opacity-100 translate-y-0"
-                leave="transition ease-out duration-200"
-                leaveStart="opacity-100"
-                leaveEnd="opacity-0"
-                appear={undefined}
-                >
-              <ul className="px-5 py-2">
-                <li>
-                  <Link href="/pricing" className="flex text-gray-600 hover:text-gray-900 py-2">Pricing</Link>
-                </li>
-                <li>
-                  <Link href="/posts" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
-                </li>                                  
-                <li>
-                  <Link href="/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
-                    <span>Download Now</span>
-                    <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fillRule="nonzero" />
-                    </svg>
-                  </Link>
-                </li>
-              </ul>
-            </Transition>
+            {/*Mobile navigation */}
+            <div ref={mobileNav}>
+              <Transition
+                  show={mobileNavOpen}
+                  tag="nav"
+                  id="mobile-nav"
+                  className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white"
+                  enter="transition ease-out duration-200 transform"
+                  enterStart="opacity-0 -translate-y-2"
+                  enterEnd="opacity-100 translate-y-0"
+                  leave="transition ease-out duration-200"
+                  leaveStart="opacity-100"
+                  leaveEnd="opacity-0"
+                  appear={undefined}
+                  >
+                <ul className="px-5 py-2">
+                  <li>
+                    <Link href="/pricing" className="flex text-gray-600 hover:text-gray-900 py-2">Pricing</Link>
+                  </li>
+                  <li>
+                    <Link href="/posts" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
+                  </li>                                  
+                  <li>
+                    <Link href="/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
+                      <span>Download Now</span>
+                      <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fillRule="nonzero" />
+                      </svg>
+                    </Link>
+                  </li>
+                </ul>
+              </Transition>
+            </div>
+
           </div>
 
-          </div>
+          {/* Search */}
+          <Search visible={searching} setVisible={setSearching}/>
           
         </div>
       </div>

@@ -54,8 +54,11 @@ const HeroHome = () => {
           <div>
             <div className="relative flex justify-center mb-8 max-w-3xl mx-auto" data-aos="zoom-y-out" data-aos-delay="450">
               <div className="flex flex-col justify-center w-full shadow-md border rounded">
-                <img className={`w-full mx-auto ${iframeHidden ? 'block' : 'hidden'}`} src="assets/demo.png" alt="Hero" />
-                <iframe className={`w-full h-[500px] ${iframeHidden ? 'hidden' : 'block'}`} src="https://my.fleetingnotes.app/?note=d8e2d800-3470-11ed-8f75-019219fce7fb"></iframe>
+                {iframeHidden ? (
+                  <img className="w-full mx-auto" src="assets/demo.png" alt="Hero" />
+                ) : (
+                  <iframe className="w-full h-[500px]" src="https://my.fleetingnotes.app/?note=d8e2d800-3470-11ed-8f75-019219fce7fb"></iframe>
+                )}
               </div>
               <button className={`absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg ${iframeHidden ? 'block' : 'hidden'}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIframeHidden(!iframeHidden); }} aria-controls="modal">
                 <svg className="w-6 h-6 fill-current text-gray-400 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

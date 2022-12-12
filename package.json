@@ -10,6 +10,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@giscus/react": "^2.2.4",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "dotenv": "^16.0.3",

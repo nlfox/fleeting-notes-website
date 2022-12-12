@@ -7,6 +7,7 @@ import type PostType from '../interfaces/post'
 import path from 'path'
 import PostSingle from '../components/blog/post-single'
 import Layout from '../components/misc/layout'
+import Comments from '../components/blog/comments'
 
 type Items = {
   title: string,
@@ -48,6 +49,7 @@ export default function Post({ post, backlinks }: Props) {
             author={post.author}
             backlinks={backlinks}
           />
+          <Comments />
         </Layout>
       )}
     </>

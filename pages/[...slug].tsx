@@ -37,10 +37,10 @@ export default function Post({ post, backlinks }: Props) {
             <meta name="description" content={description} />
             <meta property="og:title" content={post.title}/>
             <meta name="og:description" content={description} />
-            {post.ogImage?.url ? <meta property="og:image" content={post.ogImage.url} /> : <meta property="og:image" content="favicon/512.png" />}
+            {post.ogImage?.url ? <meta property="og:image" content={post.ogImage.url} /> : <meta property="og:image" content="https://fleetingnotes.app/favicon/512.png" />}
             <meta property="twitter:title" content={post.title} />
             <meta name="twitter:description" content={description} />
-            {post.ogImage?.url ? <meta property="twitter:image" content={post.ogImage.url} /> : <meta property="twitter:image" content="favicon/512.png" />}
+            {post.ogImage?.url ? <meta property="twitter:image" content={post.ogImage.url} /> : <meta property="twitter:image" content="https://fleetingnotes.app/favicon/512.png" />}
           </Head>
           <PostSingle
             title={post.title}

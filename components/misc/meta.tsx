@@ -28,13 +28,13 @@ const Meta = () => {
       <meta name="description" content={process.env.NEXT_PUBLIC_DESCRIPTION} />
       <meta property="og:title" content={process.env.NEXT_PUBLIC_TITLE}/>
       <meta name="og:description" content={process.env.NEXT_PUBLIC_DESCRIPTION} />
-      <meta property="og:image" content="assets/multi-platform.png" />
+      <meta property="og:image" content="https://fleetingnotes.app/assets/multi-platform.png" />
       <meta property="og:site_name" content={process.env.NEXT_PUBLIC_TITLE}/>
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta property="twitter:title" content={process.env.NEXT_PUBLIC_TAGLINE} />
       <meta name="twitter:description" content={process.env.NEXT_PUBLIC_DESCRIPTION} />
-      <meta property="twitter:image" content="assets/multi-platform.png" />
+      <meta property="twitter:image" content="https://fleetingnotes.app/assets/multi-platform.png" />
 
       <link
         rel="apple-touch-icon"

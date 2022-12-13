@@ -130,6 +130,9 @@ const Header = () => {
                     <Link href="/posts" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
                   </li>                                  
                   <li>
+                    <Link href="#"onClick={() => {setSearching(true); setMobileNavOpen(false);}} className="flex text-gray-600 hover:text-gray-900 py-2">Search</Link>
+                  </li>                                  
+                  <li>
                     <Link href="/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
                       <span>Download Now</span>
                       <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">

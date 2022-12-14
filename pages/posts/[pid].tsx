@@ -1,10 +1,10 @@
 import { getAllPosts } from '../../lib/api'
-import Head from 'next/head'
 import Post from '../../interfaces/post'
 import PostList from '../../components/blog/post-list'
 import Pagination from '../../components/blog/pagination'
 import PostType from '../../interfaces/post'
 import Layout from '../../components/misc/layout'
+import { NextSeo } from 'next-seo'
 
 type Props = {
   posts: Post[]
@@ -13,12 +13,9 @@ type Props = {
 }
 
 export default function Index({ posts, pid, maxPid }: Props) {
-  const titleText = `Blog | ${process.env.NEXT_PUBLIC_TITLE}`
   return (
     <Layout>
-      <Head>
-        <title>{titleText}</title>
-      </Head>
+      <NextSeo title="Blog"/>
       <PostList posts={posts || []}/>
       <Pagination currPage={pid} maxPage={maxPid}/>
     </Layout>

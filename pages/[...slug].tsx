@@ -8,6 +8,7 @@ import path from 'path'
 import PostSingle from '../components/blog/post-single'
 import Layout from '../components/misc/layout'
 import Comments from '../components/blog/comments'
+import { NextSeo } from 'next-seo'
 
 type Items = {
   title: string,
@@ -23,6 +24,7 @@ type Props = {
 export default function Post({ post, backlinks }: Props) {
   const router = useRouter()
   const description = post.excerpt.slice(0, 155)
+  const absUrl = path.join('https://fleetingnotes.app', router.asPath)
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
@@ -32,16 +34,23 @@ export default function Post({ post, backlinks }: Props) {
         <h1>Loading…</h1>
       ) : (
         <Layout>
-          <Head>
-            <title>{post.title}</title>
-            <meta name="description" content={description} />
-            <meta property="og:title" content={post.title}/>
-            <meta name="og:description" content={description} />
-            {post.ogImage?.url ? <meta property="og:image" content={post.ogImage.url} /> : <meta property="og:image" content="https://fleetingnotes.app/favicon/512.png" />}
-            <meta property="twitter:title" content={post.title} />
-            <meta name="twitter:description" content={description} />
-            {post.ogImage?.url ? <meta property="twitter:image" content={post.ogImage.url} /> : <meta property="twitter:image" content="https://fleetingnotes.app/favicon/512.png" />}
-          </Head>
+          <NextSeo
+            title={post.title}
+            description={description}
+            canonical={absUrl}
+            openGraph={{
+              title: post.title,
+              description,
+              type: 'article',
+              url: absUrl,
+              images: [{
+                url: (post.ogImage?.url) ? post.ogImage.url : "https://fleetingnotes.app/favicon/512.png",
+                width: (post.ogImage?.url) ? null: 512,
+                height: (post.ogImage?.url) ? null: 512,
+                type: null
+              }]
+            }}
+          />
           <PostSingle
             title={post.title}
             content={post.content}

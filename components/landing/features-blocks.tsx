@@ -100,7 +100,7 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="posts/alternative-sync-local-only-for-fn">Local file sync</PreviewLink></h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="posts/how-to-setup-local-file-sync">Local file sync</PreviewLink></h4>
               <p className="text-gray-600 text-center">Sync notes with your local filesystem in markdown format</p>
             </div>
 

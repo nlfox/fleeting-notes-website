@@ -58,7 +58,7 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="/notes/how to export notes in fn">Easy Export</PreviewLink></h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"><PreviewLink href="notes/how-to-export-notes-in-fn">Easy Export</PreviewLink></h4>
               <p className="text-gray-600 text-center">Export all your notes in Markdown or JSON format</p>
             </div>
 

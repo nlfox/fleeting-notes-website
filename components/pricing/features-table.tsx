@@ -126,6 +126,28 @@ function FeaturesTable() {
                 {/* Row */}
                 <tr className="border-t border-gray-200">
                   <td className="text-sm sm:text-base pr-2 py-4">
+                    <div className="font-medium underline">Unlimited Logged In Devices</div>
+                    <div className="text-gray-600">Logged in on all your devices</div>
+                  </td>
+                  <td className="text-sm px-2 py-4 text-center font-medium">
+                    <svg className="w-3 h-3 fill-current text-gray-400 opacity-75 inline-flex" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.72 1.293a1 1 0 00-1.415 0L6.012 4.586 2.72 1.293a1 1 0 00-1.414 1.414L4.598 6 1.305 9.293a1 1 0 101.414 1.414l3.293-3.293 3.293 3.293a1 1 0 001.414-1.414L7.426 6l3.293-3.293a1 1 0 000-1.414z" />
+                    </svg>
+                  </td>
+                  <td className="text-sm px-2 py-4 text-center font-medium">
+                    <svg className="w-3 h-3 fill-current text-green-500 inline-flex" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                    </svg>
+                  </td>
+                  <td className="text-sm px-2 py-4 text-center font-medium">
+                    <svg className="w-3 h-3 fill-current text-green-500 inline-flex" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                    </svg>
+                  </td>
+                </tr>
+                {/* Row */}
+                <tr className="border-t border-gray-200">
+                  <td className="text-sm sm:text-base pr-2 py-4">
                     <div className="font-medium underline">AI Powered Link Suggestions</div>
                     <div className="text-gray-600">Use AI to help suggest what's the most relevant link</div>
                   </td>

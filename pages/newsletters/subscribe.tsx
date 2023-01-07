@@ -1,6 +1,20 @@
+import { search } from 'fast-fuzzy';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react';
+import { subscribeCustomerIo } from '../../components/utils/newsletter'
 
-export default function NewsletterSubscribed() {
+export default function NewsletterSubscribe() {
+  const router = useRouter();
+  
+  useEffect(() => {
+    const searchParams = new URLSearchParams(router.asPath.split(/\?/)[1]);
+    const email = searchParams.get('email');
+    if (email) {
+      subscribeCustomerIo(email);
+    }
+  }, []);
+  
   return (
     <div className="h-screen">
       <div className="bg-white p-6  md:mx-auto">

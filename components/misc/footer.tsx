@@ -1,28 +1,15 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { subscribeCustomerIo } from '../utils/newsletter';
 
 function Footer() {
   const [newsletterSubbed, setNewsletterSubbed] = useState(false);
   const subscribeNewsletter = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
-    const resp = await fetch("https://track.customer.io/api/v1/forms/newsletter_form/submit", {
-      method: "POST",
-      headers: {
-        "Authorization": `Basic ${process.env.NEXT_PUBLIC_CUSTOMER_IO_FORM_AUTH}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        "data" : {
-          email,
-          "newsletter_sub": "true"
-        }
-      })
-    });
-    if (resp.ok) {
+    const success = subscribeCustomerIo(email);
+    if (success) {
       setNewsletterSubbed(true);
-    } else {
-      console.log(await resp.json())
     }
   }
   return (

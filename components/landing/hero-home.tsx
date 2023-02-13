@@ -44,9 +44,11 @@ const HeroHome = () => {
 
           {/* Section header */}
           <div className="text-center">
-            <h1 className="text-7xl md:text-8xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">An <PreviewLink href="/notes/open-source-software">open source</PreviewLink> Google Keep alternative with <PreviewLink href="/notes/bi-directional-links">[[backlinks]]</PreviewLink></h1>
+            <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">Transform Your Thoughts into <PreviewLink href="/posts/how-i-take-fleeting-notes-with-obsidian">Lasting Knowledge</PreviewLink></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Take linked notes within your browser or on your phone, then <PreviewLink href="/posts/sync-fleeting-notes-with-obsidian">sync the notes with Obsidian</PreviewLink></p>
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
+              Effortlessly capture your thoughts, ideas, and tasks with Fleeting Notes. And with <PreviewLink href="/posts/sync-fleeting-notes-with-obsidian">seamless integration to Obsidian</PreviewLink>, transform them into lasting knowledge that you can access anytime, anywhere.
+              </p>
             </div>
           </div>
 

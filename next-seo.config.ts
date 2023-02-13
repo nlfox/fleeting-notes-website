@@ -1,10 +1,10 @@
 import { DefaultSeoProps } from "next-seo";
 
-const description = "Take short-form notes at breakneck speeds and sync them with Obsidian. Then, build your network of ideas across all platforms."
+const description = "Tired of manually transferring notes to Obsidian? Use Fleeting Notes to effortlessly capture your ideas and sync them with Obsidian."
 // See https://www.npmjs.com/package/next-seo for more options
 const config: DefaultSeoProps = {
   titleTemplate: "%s | Fleeting Notes",
-  defaultTitle: "Fleeting Notes | Keep / Apple Notes with Backlinks",
+  defaultTitle: "Fleeting Notes | A scratchpad that syncs with Obsidian",
   canonical: 'https://www.fleetingnotes.app/',
   description,
   

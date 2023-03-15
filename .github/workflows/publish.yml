@@ -7,5 +7,10 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-run: |
-  curl -XPOST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/${{ env.GH_USERNAME }}/${{ env.GH_REPONAME }}/actions/workflows/${{ env.WORKFLOW_FILE }}/dispatches --data '{"ref": "main"}'
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger publish workflow
+        run: |
+          curl -XPOST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/${{ env.GH_USERNAME }}/${{ env.GH_REPONAME }}/actions/workflows/${{ env.WORKFLOW_FILE }}/dispatches --data '{"ref": "main"}'

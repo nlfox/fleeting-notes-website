@@ -1,15 +1,17 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { getAllPosts, getLinksMapping, getPostBySlug } from "../lib/api";
 import Head from "next/head";
-import { markdownToHtml } from "../lib/markdownToHtml";
-import type PostType from "../interfaces/post";
 import path from "path";
-import PostSingle from "../components/post/post-single";
-import Layout from "../components/misc/layout";
-import Comments from "../components/blog/comments";
 import { NextSeo } from "next-seo";
-import PostWrapper from "../components/post/post-wrapper";
+
+import { getAllPosts, getLinksMapping, getPostBySlug } from "../../lib/api";
+import { markdownToHtml } from "../../lib/markdownToHtml";
+import type PostType from "../../interfaces/post";
+import PostSingle from "../../components/post/post-single";
+import Layout from "../../components/misc/layout";
+import Comments from "../../components/blog/comments";
+import DocumentationSidebar from "../../components/docs/sidebar";
+import PostWrapper from "../../components/post/post-wrapper";
 
 type Items = {
   title: string;
@@ -52,15 +54,20 @@ export default function Post({ post, backlinks }: Props) {
               }],
             }}
           />
-          <PostWrapper className="max-w-2xl mx-auto px-4">
-            <PostSingle
-              title={post.title}
-              content={post.content}
-              date={post.date}
-              author={post.author}
-              backlinks={backlinks}
-            />
-            <Comments />
+          <PostWrapper className="max-w-5xl mx-auto px-4">
+            <div className="md:flex md:justify-between">
+              <DocumentationSidebar />
+              <PostSingle
+                title={post.title}
+                content={post.content}
+                date={post.date}
+                author={post.author}
+                backlinks={backlinks}
+              />
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <Comments />
+            </div>
           </PostWrapper>
         </Layout>
       )}

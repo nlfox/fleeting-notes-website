@@ -14,6 +14,7 @@ type Props = {
       excerpt: string,
     }
   }
+  children: React.Component,
 }
 
 function PostSingle({
@@ -21,7 +22,8 @@ function PostSingle({
   date,
   author,
   content,
-  backlinks
+  backlinks,
+  children,
 }: Props) {
   return (
     <section>
@@ -40,7 +42,6 @@ function PostSingle({
               {/* Article content */}
               <div className="lg:flex lg:justify-between" data-sticky-container>
 
-
                 {/* Main content */}
                 <div>
 
@@ -57,6 +58,12 @@ function PostSingle({
 
                 </div>
 
+
+              </div>
+
+              {/* Article footer */}
+            </article>
+
                 {/* Sidebar */}
                 <hr className="my-10 border border-dashed lg:block"/>
                 <aside className="relative lg:block lg:w-72 lg:ml-20 shrink-0">
@@ -71,11 +78,6 @@ function PostSingle({
                     </div>
                   </div>
                 </aside>
-
-              </div>
-
-              {/* Article footer */}
-            </article>
 
           </div>
 

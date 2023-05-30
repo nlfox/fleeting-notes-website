@@ -118,9 +118,14 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts(["slug"]);
+  let posts = getAllPosts(["slug"]).filter((p: { slug: string }) =>
+    p.slug.startsWith("docs/")
+  );
+  posts.forEach((p: { slug: string }) => {
+    p.slug = p.slug.replace("docs/", "");
+  });
   return {
-    paths: posts.map((post) => {
+    paths: posts.map((post): { params: { slug: string[] } } => {
       return {
         params: {
           slug: post.slug.split(path.sep),

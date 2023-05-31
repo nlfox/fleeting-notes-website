@@ -22,9 +22,12 @@ type Props = {
   post: PostType;
   slug: string;
   backlinks: { [k: string]: Items };
+  sidebarData: { [key: string]: string[] };
 };
 
-export default function Post({ post, backlinks }: Props) {
+export default function DocumentationPost(
+  { post, backlinks, sidebarData }: Props,
+) {
   const router = useRouter();
   const description = post.excerpt.slice(0, 155);
   const absUrl = path.join("https://fleetingnotes.app", router.asPath);
@@ -56,7 +59,7 @@ export default function Post({ post, backlinks }: Props) {
           />
           <PostWrapper className="max-w-5xl mx-auto px-4">
             <div className="md:flex md:justify-between">
-              <DocumentationSidebar />
+              <DocumentationSidebar sidebarData={sidebarData} />
               <PostSingle
                 title={post.title}
                 content={post.content}
@@ -79,12 +82,14 @@ type Params = {
   params: {
     slug: string[];
     backlinks: string[];
+    sidebarData: { [key: string]: string[] };
   };
 };
 
 export async function getStaticProps({ params }: Params) {
   const slug = path.join(...params.slug);
-  const post = await getPostBySlug(slug, [
+  const docSlug = path.join("docs", slug);
+  const post = getPostBySlug(docSlug, [
     "title",
     "excerpt",
     "date",
@@ -94,8 +99,8 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "coverImage",
   ]);
-  const content = await markdownToHtml(post.content || "", slug);
-  const linkMapping = await getLinksMapping();
+  const content = await markdownToHtml(post.content || "", docSlug);
+  const linkMapping = getLinksMapping();
   const backlinks = Object.keys(linkMapping).filter((k) =>
     linkMapping[k].includes(post.slug) && k !== post.slug
   );
@@ -113,25 +118,50 @@ export async function getStaticProps({ params }: Params) {
         content,
       },
       backlinks: backlinkNodes,
+      sidebarData: getSidebarData(),
     },
   };
 }
 
 export async function getStaticPaths() {
-  let posts = getAllPosts(["slug"]).filter((p: { slug: string }) =>
+  const posts = getAllPostsInDocs();
+  return {
+    paths: posts.map(
+      (post: { slug: string }): { params: { slug: string[] } } => {
+        return {
+          params: {
+            slug: post.slug.split(path.sep),
+          },
+        };
+      },
+    ),
+    fallback: false,
+  };
+}
+
+function getAllPostsInDocs() {
+  const posts = getAllPosts(["slug"]).filter((p: { slug: string }) =>
     p.slug.startsWith("docs/")
   );
   posts.forEach((p: { slug: string }) => {
     p.slug = p.slug.replace("docs/", "");
   });
-  return {
-    paths: posts.map((post): { params: { slug: string[] } } => {
-      return {
-        params: {
-          slug: post.slug.split(path.sep),
-        },
-      };
-    }),
-    fallback: false,
-  };
+  return posts;
+}
+
+function getSidebarData() {
+  const posts = getAllPostsInDocs();
+  const sidebarData: { [key: string]: string[] } = {};
+  posts.forEach((p: { slug: string }) => {
+    const parts = p.slug.split(path.sep);
+    if (parts.length == 2) {
+      const [folder, file] = parts;
+      if (sidebarData[folder]) {
+        sidebarData[folder].push(file);
+      } else {
+        sidebarData[folder] = [file];
+      }
+    }
+  });
+  return sidebarData;
 }

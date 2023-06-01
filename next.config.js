@@ -8,7 +8,7 @@ module.exports = {
       },
       {
         source: '/docs',
-        destination: '/docs/introduction',
+        destination: '/docs/getting-started/introduction',
         permanent: true,
       },
     ]

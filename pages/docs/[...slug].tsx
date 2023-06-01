@@ -22,7 +22,7 @@ type Props = {
   post: PostType;
   slug: string;
   backlinks: { [k: string]: Items };
-  sidebarData: { [key: string]: string[] };
+  sidebarData: SidebarData;
 };
 
 export default function DocumentationPost(
@@ -59,7 +59,10 @@ export default function DocumentationPost(
           />
           <PostWrapper className="max-w-5xl mx-auto px-4">
             <div className="md:flex md:justify-between">
-              <DocumentationSidebar sidebarData={sidebarData} />
+              <DocumentationSidebar
+                sidebarData={sidebarData}
+                slug={post.slug}
+              />
               <PostSingle
                 title={post.title}
                 content={post.content}
@@ -82,7 +85,7 @@ type Params = {
   params: {
     slug: string[];
     backlinks: string[];
-    sidebarData: { [key: string]: string[] };
+    sidebarData: SidebarData; 
   };
 };
 
@@ -140,7 +143,7 @@ export async function getStaticPaths() {
 }
 
 function getAllPostsInDocs() {
-  const posts = getAllPosts(["slug"]).filter((p: { slug: string }) =>
+  const posts = getAllPosts(["slug", "title"]).filter((p: { slug: string }) => 
     p.slug.startsWith("docs/")
   );
   posts.forEach((p: { slug: string }) => {
@@ -149,17 +152,23 @@ function getAllPostsInDocs() {
   return posts;
 }
 
+export type SidebarData = { [key: string]: {title: string, file: string}[] };
+
 function getSidebarData() {
   const posts = getAllPostsInDocs();
-  const sidebarData: { [key: string]: string[] } = {};
-  posts.forEach((p: { slug: string }) => {
+  const sidebarData: SidebarData = {};
+  posts.forEach((p: { slug: string, title: string }) => {
     const parts = p.slug.split(path.sep);
     if (parts.length == 2) {
       const [folder, file] = parts;
+      const obj = {
+        title: p?.title,
+        file: file,
+      }
       if (sidebarData[folder]) {
-        sidebarData[folder].push(file);
+        sidebarData[folder].push(obj);
       } else {
-        sidebarData[folder] = [file];
+        sidebarData[folder] = [obj];
       }
     }
   });

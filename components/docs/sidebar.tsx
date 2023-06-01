@@ -1,13 +1,25 @@
 import { useState } from "react";
+import { SidebarData } from "../../pages/docs/[...slug]";
 
 type Props = {
-  sidebarData: { [key: string]: string[] };
+  sidebarData: SidebarData;
+  slug: string;
 };
 export default function DocumentationSidebar({
   sidebarData,
+  slug,
 }: Props) {
+  let initLinkOpenState = null;
+  Object.keys(sidebarData).forEach((k, i) => {
+    sidebarData[k].forEach((obj) => {
+      const sidebarSlug = `docs/${k}/${obj.file}`;
+      if (slug === sidebarSlug) {
+        initLinkOpenState = i;
+      }
+    });
+  });
   const [sidebarNavOpen, setSidebarNavOpen] = useState<boolean>(false);
-  const [sidebarLinkOpen, setSidebarLinkOpen] = useState<number | null>(null);
+  const [sidebarLinkOpen, setSidebarLinkOpen] = useState<number | null>(initLinkOpenState);
 
   return (
     <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
@@ -51,7 +63,7 @@ export default function DocumentationSidebar({
           <ul className="font-medium -my-2">
             {/* 1st level */}
             {Object.keys(sidebarData).map((k, i) => (
-              <li className="py-2">
+              <li key={i} className="py-2">
                 <a
                   className="flex items-center hover:underline"
                   href="#0"
@@ -83,13 +95,13 @@ export default function DocumentationSidebar({
                     !(sidebarLinkOpen == i) && "hidden"
                   }`}
                 >
-                  {sidebarData[k].map((filename) => (
-                    <li className="py-1">
+                  {sidebarData[k].map((obj, i) => (
+                    <li key={i} className="py-1">
                       <a
                         className="text-gray-600 hover:underline"
-                        href="#installation"
+                        href={`/docs/${k}/${obj.file}`}
                       >
-                        {filename}
+                        {obj.title || obj.file}
                       </a>
                     </li>
                   ))}

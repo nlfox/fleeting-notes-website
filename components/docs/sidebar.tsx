@@ -11,12 +11,9 @@ export default function DocumentationSidebar({
 }: Props) {
   let initLinkOpenState = null;
   Object.keys(sidebarData).forEach((k, i) => {
-    sidebarData[k].forEach((obj) => {
-      const sidebarSlug = `docs/${k}/${obj.file}`;
-      if (slug === sidebarSlug) {
-        initLinkOpenState = i;
-      }
-    });
+    if (slug.startsWith(`docs/${k}`)) {
+      initLinkOpenState = i;
+    }
   });
   const [sidebarNavOpen, setSidebarNavOpen] = useState<boolean>(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState<number | null>(initLinkOpenState);

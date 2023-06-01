@@ -25,7 +25,7 @@ function PostSingle({
   backlinks,
 }: Props) {
   return (
-    <div className="mx-auto mb-10">
+    <div className="mx-auto mb-10 max-w-3xl">
       <article>
         {/* Article header */}
         <header className="mb-10 pt-0">

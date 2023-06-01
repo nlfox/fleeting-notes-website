@@ -111,7 +111,9 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts(["slug"]);
+  let posts = await getAllPosts(["slug"]);
+  posts = posts.filter(p => !p.slug.startsWith('docs/'))
+
   return {
     paths: posts.map((post) => {
       return {

@@ -2,8 +2,8 @@ import Giscus from "@giscus/react";
 
 function Comments() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6">
-      <Giscus 
+    <div className="mb-5">
+      <Giscus
         id="comments"
         repo="fleetingnotes/fleeting-notes-website-md"
         repoId="R_kgDOImOn5w"
@@ -18,7 +18,7 @@ function Comments() {
         loading="lazy"
       />
     </div>
-  )
+  );
 }
 
 export default Comments;

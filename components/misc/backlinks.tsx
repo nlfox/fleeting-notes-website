@@ -15,6 +15,8 @@ const Backlinks = ({ backlinks }: Props) => {
     <>
       {Object.keys(backlinks).map((slug) => {
         const post = backlinks[slug];
+        // TODO: work around to make docs backlinks work
+        slug = slug.replace(/^docs\//, '');
         return (
           <Link
             key={slug}

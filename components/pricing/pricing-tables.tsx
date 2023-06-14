@@ -18,7 +18,7 @@ function PricingTables() {
       ],
       monthlyUrl: "https://my.fleetingnotes.app/",
       annualUrl: "https://my.fleetingnotes.app/",
-      ctaText: "Get Started",
+      ctaText: "Try Web App Now",
     },
     {
       name: "Basic",

@@ -33,7 +33,7 @@ function PricingTables() {
       ],
       monthlyUrl: "https://payments.fleetingnotes.app/?price=basic_monthly",
       annualUrl: "https://payments.fleetingnotes.app/?price=basic_yearly",
-      ctaText: "Start free trial",
+      ctaText: "Get started",
     },
     {
       name: "Believer",
@@ -48,7 +48,7 @@ function PricingTables() {
       ],
       monthlyUrl: "https://payments.fleetingnotes.app/?price=premium_monthly",
       annualUrl: "https://payments.fleetingnotes.app/?price=premium_yearly",
-      ctaText: "Start free trial",
+      ctaText: "Get started",
     },
   ]);
 

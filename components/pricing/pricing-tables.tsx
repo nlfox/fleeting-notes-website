@@ -59,14 +59,14 @@ function PricingTables() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
             <h1 className="h1 mb-4" data-aos="zoom-y-out">
-              A powerful free plan
+              Secure Your Exclusive Early-Bird Rate Before September 1st!
             </h1>
             <p
               className="text-xl text-gray-600"
               data-aos="zoom-y-out"
               data-aos-delay="150"
             >
-              All offline features will always be 100% free.
+              Subscribe now to guarantee these prices for life. After September 1st, rates will double. Don't miss out!
             </p>
           </div>
 

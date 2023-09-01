@@ -23,8 +23,8 @@ function PricingTables() {
     {
       name: "Basic",
       blurb: "For people who capture across multiple devices",
-      monthlyPrice: ["$", "3", "/month"],
-      annualPrice: ["$", "2.5", "/month"],
+      monthlyPrice: ["$", "6", "/month"],
+      annualPrice: ["$", "5", "/month"],
       featured: true,
       features: [
         <b>Everything on the free plan</b>,
@@ -38,8 +38,8 @@ function PricingTables() {
     {
       name: "Believer",
       blurb: "For people who believe in the future of Fleeting Notes",
-      monthlyPrice: ["$", "6", "/month"],
-      annualPrice: ["$", "5", "/month"],
+      monthlyPrice: ["$", "12", "/month"],
+      annualPrice: ["$", "10", "/month"],
       featured: false,
       features: [
         <b>Everything on the Basic plan</b>,
@@ -59,14 +59,14 @@ function PricingTables() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
             <h1 className="h1 mb-4" data-aos="zoom-y-out">
-              Secure Your Exclusive Early-Bird Rate Before September 1st!
+              All Essentials Covered, Zero Cost
             </h1>
             <p
               className="text-xl text-gray-600"
               data-aos="zoom-y-out"
               data-aos-delay="150"
             >
-              Subscribe now to guarantee these prices for life. After September 1st, rates will double. Don't miss out!
+              Our free plan offers all you need to sync and link effortlessly with Obsidian. Subscribe to login from anywhere.
             </p>
           </div>
 

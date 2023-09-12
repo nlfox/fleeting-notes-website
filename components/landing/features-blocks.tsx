@@ -72,8 +72,8 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Bi-directional Links</h4>
-              <p className="text-gray-600 text-center">Easily navigate between related notes to improve the accessibility of info</p>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Open Source</h4>
+              <p className="text-gray-600 text-center">Ensures transparency and honesty in every line of code</p>
             </div>
 
             {/* 5th item */}

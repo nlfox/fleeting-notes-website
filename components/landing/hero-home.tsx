@@ -44,9 +44,9 @@ const HeroHome = () => {
 
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">Google Keep Clone with <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-900 to-purple-400">Obsidian Sync</span></h1>
+            <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">Imagine Apple Notes, synced with <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-900 to-purple-400">Obsidian</span></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
+              <p className="text-xl md:text-2xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
                 Your Ideas, Instantly in Obsidian: The Open-Source Tool Making Note-Taking Effortless
               </p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center mb-4" data-aos="zoom-y-out" data-aos-delay="300">

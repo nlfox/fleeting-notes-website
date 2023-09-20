@@ -43,6 +43,7 @@ function PricingTables() {
       featured: false,
       features: [
         <b>Everything on the Basic plan</b>,
+        <span>Notes from SMS and phone calls</span>,
         <span>AI powered link suggestions</span>,
         <span>And more to come...</span>,
       ],

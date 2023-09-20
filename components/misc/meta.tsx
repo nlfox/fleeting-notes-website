@@ -20,12 +20,6 @@ const Meta = () => {
         `,}}
       />
       {/* END of Google tag (gtag.js) */}
-      <Script>
-        {`
-          (function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');
-        `}
-      </Script>
-      <Script async src='https://r.wdfl.co/rw.js' data-rewardful='bbc0a9' />
     </Head>
   )
 }

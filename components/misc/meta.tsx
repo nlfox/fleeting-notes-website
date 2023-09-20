@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import Script from "next/script"
+import Head from 'next/head';
+import Script from 'next/script';
 
 const Meta = () => {
   return (
@@ -20,7 +20,12 @@ const Meta = () => {
         `,}}
       />
       {/* END of Google tag (gtag.js) */}
-
+      <Script>
+        {`
+          (function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');
+        `}
+      </Script>
+      <Script async src='https://r.wdfl.co/rw.js' data-rewardful='bbc0a9' />
     </Head>
   )
 }

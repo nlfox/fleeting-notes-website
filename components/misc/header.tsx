@@ -60,17 +60,11 @@ const Header = () => {
               {/* Desktop menu links */}
               <ul className="flex grow justify-end flex-wrap items-center">
                 <li>
-                  <Link href="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Pricing</Link>
+                  <Link href="/posts" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/posts" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
-                </li>              
-                <li>
-                  <Link href="https://docs.fleetingnotes.app" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Docs</Link>
-                </li>              
-                <li>
-                  <Link href="https://payments.fleetingnotes.app" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Payments</Link>
-                </li>              
+                    <Link href="/about_me" className="flex text-gray-600 hover:text-gray-900 py-2">About Me</Link>
+                  </li>                           
               </ul>
 
               {/* Desktop sign in links */}
@@ -81,14 +75,6 @@ const Header = () => {
                       <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zM15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
                     </svg>
                   </button>
-                </li>
-                <li>
-                  <Link href="https://docs.fleetingnotes.app/getting-started/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                    <span>Download Now</span>
-                    <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                    </svg>                  
-                  </Link>
                 </li>
               </ul>
 
@@ -130,22 +116,14 @@ const Header = () => {
                   >
                 <ul className="px-5 py-2">
                   <li>
-                    <Link href="/pricing" className="flex text-gray-600 hover:text-gray-900 py-2">Pricing</Link>
-                  </li>
-                  <li>
                     <Link href="/posts" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
+                  </li>     
+                  <li>
+                    <Link href="/about_me" className="flex text-gray-600 hover:text-gray-900 py-2">About Me</Link>
                   </li>                                  
                   <li>
                     <button onClick={() => {setSearching(true); setMobileNavOpen(false);}} className="flex text-gray-600 hover:text-gray-900 py-2 w-full">Search</button>
                   </li>                                  
-                  <li>
-                    <Link href="https://docs.fleetingnotes.app/getting-started/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
-                      <span>Download Now</span>
-                      <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fillRule="nonzero" />
-                      </svg>
-                    </Link>
-                  </li>
                 </ul>
               </Transition>
             </div>
